@@ -5,18 +5,18 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 export default ({ }) => {
     const router = useRouter();
-    const { user } = useUser();
+    const { user, logout } = useUser();
     const { itemsListNavBar, handleItemsStatus } = useItemsNavbar();
 
     useEffect(() => {
         const currentItem = sessionStorage.getItem('itemNavbar');
-        if(currentItem) {
+        if (currentItem) {
             if (user?.id && router.pathname !== '/auth' && router.pathname !== '/register') {
-                router.push( itemsListNavBar[currentItem]?.href || '/');
+                router.push(itemsListNavBar[currentItem]?.href || '/');
 
             }
         }
-        
+
     }, [itemsListNavBar]);
 
     return (
@@ -37,6 +37,14 @@ export default ({ }) => {
                     )
                 })}
 
+                {user?.id && <button
+                    className={`hover:font-semibold md:w-32 w-20 text-[10px] md:text-[15px]`}
+                    onClick={() => {
+                        logout();
+                    }}>
+                    Log Out
+
+                </button>}
             </ul>
         </nav>
     )

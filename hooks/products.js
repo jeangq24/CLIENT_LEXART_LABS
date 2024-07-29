@@ -7,7 +7,7 @@ export const useListProducts = (token) => {
 
     const getProducts = async () => {
         const result = await getListProudcts(setLoading, token);
-        setListProducts(result.productsList || []);
+        setListProducts(result?.productsList || []);
     };
 
     useEffect(() => {
