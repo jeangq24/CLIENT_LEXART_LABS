@@ -49,17 +49,3 @@ Para probar la aplicación en producción, puedes utilizar el siguiente usuario:
 - **Email**: prueba@test.com
 - **Password**: 12345678
 
-## Notas Adicionales
-
-De acuerdo al tiempo disponible, ya que trabajo fines de semana también, quedaron pendientes diferentes módulos por desarrollar. Actualmente, se puede:
-
-- Registrar un usuario
-- Iniciar sesión
-- Obtener la lista de productos
-- Navegar con la barra de navegación por los diferentes módulos, los cuales muestran una pantalla de "página en construcción"
-- Cerrar sesión
-
-Sin embargo, todas las funcionalidades requeridas están listas desde el API REST para ser consumidas y configuradas en el cliente.
-
-Si tienes algún problema o pregunta sobre la configuración o el uso del proyecto, no dudes en abrir un issue o contactarnos.
-

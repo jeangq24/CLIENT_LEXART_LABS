@@ -70,7 +70,7 @@ const RegisterUser = () => {
 
     const classNameIcons = "w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto";
     return (
-        <div className="flex flex-col gap-4 w-full md:w-1/2">
+        <div className="flex flex-col gap-4 w-full md:w-1/2 h-auto">
             <h1 className="text-2xl font-bold w-full text-center">Register</h1>
             <InputText placeholder={"Enter your name"} textLabel={'Name'} value={nameValue} onChange={handleChangeName}>
                 <CiUser className={classNameIcons} />
