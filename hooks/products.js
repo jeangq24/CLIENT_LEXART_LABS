@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { getListProudcts } from '@/lib/services.js';
+import CURRENT_HOST from "@/lib/getHost.js";
 import io from 'socket.io-client';
-const socket = io('http://localhost:3001');
 
 export const useListProducts = (token) => {
+    const socket = io(CURRENT_HOST);
     const [listProducts, setListProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -18,11 +19,8 @@ export const useListProducts = (token) => {
     };
 
     useEffect(() => {
-        console.log("HOLA MUDNO")
         if (listProducts.length === 0) {
-
             getProducts();
-
         }
 
         return () => {
