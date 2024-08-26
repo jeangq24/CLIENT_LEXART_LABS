@@ -5,12 +5,13 @@ import { Toaster } from 'react-hot-toast';
 import { UserProvider, useUser } from '../lib/UserContext';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import LoadingComponent from '@/components/LoadingComponent';
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  
 });
 
 function AuthGuard({ children }) {
@@ -25,9 +26,6 @@ function AuthGuard({ children }) {
     }
   }, [user, loading, router]);
 
-  if (loading) {
-    return <LoadingComponent/>
-  }
 
   return <>{children}</>;
 }

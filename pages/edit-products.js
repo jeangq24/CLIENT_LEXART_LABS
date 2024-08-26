@@ -1,5 +1,5 @@
-import Container from "@/components/Container"
-import UnderConstructionPage from "@/components/UnderConstructionPage";
+import Container from "@/components/Container.js"
+import UnderConstructionPage from "@/components/UnderConstructionPage.js";
 
 export default () => {
     return (

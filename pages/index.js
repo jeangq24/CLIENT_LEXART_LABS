@@ -1,10 +1,7 @@
-import Container from "@/components/Container";
-import LoadingComponent from "@/components/LoadingComponent";
+import Container from "@/components/Container.js";
 export default function Home() {
-
   return (
     <Container>
-      <LoadingComponent/>
     </Container>
   )
 };

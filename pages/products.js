@@ -1,15 +1,15 @@
-import CardProduct from "@/components/CardProduct";
-import Container from "@/components/Container"
-import LoadingComponent from "@/components/LoadingComponent";
-import { useListProducts } from "@/hooks/products";
-import { useUser } from '@/lib/UserContext';
+import CardProduct from "@/components/CardProduct.js";
+import Container from "@/components/Container.js"
+import LoadingComponent from "@/components/LoadingComponent.js";
+import { useListProducts } from "@/hooks/products.js";
+import { useUser } from '@/lib/UserContext.js';
 
 export default () => {
     const { user } = useUser();
     const { listProducts, loading } = useListProducts(user?.token);
     return (
         <Container>
-            {loading || !listProducts[0] ?
+            {listProducts.length === 0 ?
                 <LoadingComponent />
                 :
                 <div className="w-full h-full lg:mt-20 mt-24 flex flex-col gap-4">
