@@ -22,8 +22,9 @@ npm install
 Crea un archivo `.env.local` en la raíz del proyecto y define las siguientes variables de entorno:
 
 ```env
-NEXT_PUBLIC_HOST_DEV=http://localhost:3001 # Este host apunta a nuestro REST API para consumir los endpoints
-NEXT_PUBLIC_ENV_DEV=true # Establecemos el modo desarrollo en true
+NEXT_PUBLIC_SERVER_HOST=http://localhost:3001 # Host de la conexion con la API-REST (Validacion de este HOST en la CSP, Politica de seguridad de contenido)
+NEXT_PUBLIC_SERVER_HOST_SOCKET=ws://localhost:3001 #Host de la conexion del socket (Validacion de este HOST en la CSP, Politica de seguridad de contenido)
+NEXT_PUBLIC_ENV_DEV=true # Establecemos el modo desarrollo en true (*)
 ```
 
 ### Ejecución del Servidor
@@ -42,10 +43,5 @@ Este proyecto se encuentra desplegado en Vercel en la siguiente dirección:
 
 - [https://client-lexart-labs.vercel.app](https://client-lexart-labs.vercel.app)
 
-### Usuario de Prueba en Producción
 
-Para probar la aplicación en producción, puedes utilizar el siguiente usuario:
-
-- **Email**: prueba@test.com
-- **Password**: 12345678
 

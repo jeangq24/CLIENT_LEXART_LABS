@@ -1,30 +1,29 @@
 import { useEffect, useState } from "react";
 import { getListProudcts } from '@/lib/services.js';
-import CURRENT_HOST from "@/lib/getHost.js";
 import io from 'socket.io-client';
+const socket = io(process.env.NEXT_PUBLIC_SERVER_HOST);
 
 export const useListProducts = (token) => {
-    const socket = io(CURRENT_HOST);
     const [listProducts, setListProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const getProducts = async () => {
+    // const getProducts = async () => {
 
 
-        await getListProudcts(setLoading, token);
-        socket.on('updateProductList', (updatedProductsList) => {
-            setListProducts(updatedProductsList || []);
-        });
+    //     await getListProudcts(setLoading, token);
+    //     socket.on('updateProductList', (updatedProductsList) => {
+    //         setListProducts(updatedProductsList || []);
+    //     });
 
-    };
+    // };
 
     useEffect(() => {
-        if (listProducts.length === 0) {
-            getProducts();
-        }
+        // if (listProducts.length === 0) {
+        //     getProducts();
+        // }
 
         return () => {
-            socket.off('updateProductList');
+            socket.off();
         };
     }, []);
 
