@@ -1,3 +1,6 @@
+
+![En construccion...](https://raw.githubusercontent.com/jeangq24/CLIENT_LEXART_LABS/main/public/under-construction.jpg)
+
 # CLIENT_LEXART_LABS_TEST
 
 CLIENT DEVELOPMENT BY JEAN GARZON
@@ -42,6 +45,7 @@ El servidor se ejecutará en [http://localhost:3000/](http://localhost:3000/).
 Este proyecto se encuentra desplegado en Vercel en la siguiente dirección:
 
 - [https://client-lexart-labs.vercel.app](https://client-lexart-labs.vercel.app)
+
 
 
 
