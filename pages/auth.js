@@ -2,10 +2,7 @@ import { CiMail } from "react-icons/ci";
 import InputText from "@/components/InputText";
 import InputPassword from "@/components/InputPassword";
 import Button from "@/components/Button";
-import toast from "react-hot-toast";
 import { useState } from "react";
-import Router from 'next/router';
-import { loginFunction } from '@/lib/auth';
 import { useUser } from '@/lib/UserContext';
 import Container from "@/components/Container";
 import Link from "next/link";
@@ -26,7 +23,7 @@ const LoginUser = ({ login }) => {
 
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+   
 
     const handleChangeEmail = (e) => {
         const { value } = e.target;
@@ -47,7 +44,7 @@ const LoginUser = ({ login }) => {
                 <CiMail className={classNameIcons} />
             </InputText>
             <InputPassword onChange={handleChangePassword} value={passwordValue} />
-            <Button text={'Login'} onClick={() => loginFunction(emailValue, passwordValue, setIsLoading, login, Router)}
+            <Button text={'Login'} onClick={() => login(emailValue, passwordValue)}
             />
             <span>Don't have an account? - <Link href={'register'}><span className="underline text-indigo-600 hover:text-indigo-700 font-bold">Create an account</span></Link></span>
         </div>

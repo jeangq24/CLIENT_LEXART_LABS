@@ -5,30 +5,24 @@ import { Toaster } from 'react-hot-toast';
 import { UserProvider, useUser } from '../lib/UserContext';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import LoadingComponent from '@/components/LoadingComponent';
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   preload: true,
-  
+
 });
 
 function AuthGuard({ children }) {
-  const router = useRouter();
-  const { user, loading } = useUser();
 
-  useEffect(() => {
-    if (!loading) {
-      if (!user?.id && router.pathname !== '/auth' && !user && router.pathname !== '/register') {
-        router.push('/auth');
-      }
-    }
-  }, [user, loading, router]);
+  const { loading } = useUser();
+  return (<>{children}</>)
+
+};
 
 
-  return <>{children}</>;
-}
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,6 +1,7 @@
 import CardProduct from "@/components/CardProduct.js";
 import Container from "@/components/Container.js"
 import LoadingComponent from "@/components/LoadingComponent.js";
+import UnderConstructionPage from "@/components/UnderConstructionPage";
 import { useListProducts } from "@/hooks/products.js";
 import { useUser } from '@/lib/UserContext.js';
 
@@ -10,7 +11,7 @@ export default () => {
     return (
         <Container>
             {listProducts.length === 0 ?
-                <LoadingComponent />
+                  <UnderConstructionPage />
                 :
                 <div className="w-full h-full lg:mt-20 mt-24 flex flex-col gap-4">
                     <h1 className="text-lg font-bold w-full text-center py-4">Product List </h1>

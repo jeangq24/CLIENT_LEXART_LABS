@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getListProudcts } from '@/lib/services.js';
 import io from 'socket.io-client';
-const socket = io(process.env.NEXT_PUBLIC_SERVER_HOST);
 
 export const useListProducts = (token) => {
+   
     const [listProducts, setListProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -17,15 +17,16 @@ export const useListProducts = (token) => {
 
     // };
 
-    useEffect(() => {
-        // if (listProducts.length === 0) {
-        //     getProducts();
-        // }
+    // useEffect(() => {
+    //     const socket = io(process.env.NEXT_PUBLIC_SERVER_HOST);
+    //     // if (listProducts.length === 0) {
+    //     //     getProducts();
+    //     // }
 
-        return () => {
-            socket.off();
-        };
-    }, []);
+    //     return () => {
+    //         socket.off();
+    //     };
+    // }, []);
 
     return {
         listProducts, loading
